@@ -1,8 +1,7 @@
 <script setup>
 import { useCartStore } from "~/store/cart";
-const cartStore = useCartStore();
 
-/** ========= COMPUTED =========== */
+const cartStore = useCartStore();
 
 const cartLength = computed(() => {
   return cartStore.cartItems?.length;
@@ -16,7 +15,7 @@ onMounted(() => {
 <template>
   <nav class="bg-zinc-800 text-white py-5 px-5">
     <div class="container flex justify-between">
-      <NuxtLink to="/" class="logo text-xl font-bold">WP + Nuxt Blog</NuxtLink>
+      <NuxtLink to="/" class="logo text-xl font-bold">WP + Nuxt + WooCommerce</NuxtLink>
       <ul class="inline-flex gap-4">
         <li><NuxtLink to="/">Home</NuxtLink></li>
         <li><NuxtLink to="/categories">Categories</NuxtLink></li>
