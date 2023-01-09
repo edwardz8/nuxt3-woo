@@ -7,15 +7,8 @@ WP_URL=http://nuxt3-woo:8888/
 WP_URL_HTTPS=http://nuxt3-woo:8888/
 
 <!-- Generate your own keys in WooCommerce Settings -->
-WP_CONSUMER_PUBLIC=ck_f01631c3a28de9df5d46dbecbb0b81cadf14d227
-WP_CONSUMER_SECRET=cs_8b1d43941bf742489a680f295aa93205ba892c26
-
-### current error
-
-```js
-Unhandled error during execution of setup function at
-<Index onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref<undefined >>
-```
+WP_CONSUMER_PUBLIC=kjdnfjkfjdkjfkdjfkdhfkhjfkfkdjnk
+WP_CONSUMER_SECRET=cs_kejhfkdfjkdhfjlkdhfjkdfjkdfhjkdfjkdfk
 
 ## Setup
 

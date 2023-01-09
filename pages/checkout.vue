@@ -1,6 +1,7 @@
 <script setup>
 import { useCartStore } from "~/store/cart";
 import useWpApi from "~/composables/useWpApi";
+
 const cartStore = useCartStore();
 const router = useRouter();
 
@@ -17,9 +18,9 @@ const postal_code = ref("");
 const loading = ref(false);
 
 /* methods */
-
 const checkout = async () => {
   loading.value = true;
+
   await useWpApi().postOrder({
     payment_method: "cod",
 
@@ -37,6 +38,7 @@ const checkout = async () => {
     line_items: lineItems.value,
   });
   loading.value = false;
+  cartStore.emptyCart()
 
   router.push("/order-confirmed");
 };

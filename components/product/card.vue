@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const emit = defineEmits(["addToCart"]);
+const emit = defineEmits(["addProductToCart"]);
 
 defineProps<{
   title: string;
@@ -10,9 +10,8 @@ defineProps<{
   regularPrice?: string;
 }>();
 
-const addToCart = () => {
-  // emit("addToCart");
-  console.log('addToCart')
+const addProductToCart = () => {
+  emit("addProductToCart");
 };
 </script>
 
@@ -34,10 +33,10 @@ const addToCart = () => {
       ></div>
       <div class="flex gap-4">
         <p class="text-xl text-primary font-semibold">
-          {{ salePrice }}
+          ${{ salePrice }}
         </p>
         <p class="text-base text-gray-400 line-through" v-if="salePrice !== regularPrice">
-          {{ regularPrice }}
+          ${{ regularPrice }}
         </p>
       </div>
       <div class="flex items-center justify-between">
@@ -45,7 +44,7 @@ const addToCart = () => {
           v-if="id"
           class="border p-2 bg-black rounded border-b-2 text-white inline-flex items-center"
           :to="`/products/${id}`"
-          >View Product
+          >View
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -63,10 +62,10 @@ const addToCart = () => {
         </NuxtLink>
         <button
           v-if="id"
-          @click="addtoCart"
+          @click="addProductToCart"
           class="border p-2 bg-black rounded border-b-2 text-white inline-flex items-center"
         >
-          Add to Cart
+          Add
         </button>
       </div>
     </div>

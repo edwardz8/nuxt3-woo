@@ -35,6 +35,7 @@ const addToCart = async (prod: object) => {
 
 <template>
   <main>
+  <Header />
     <section class="container mx-auto py-16 px-2">
       <div class="grid sm:grid-cols-4 gap-5">
         <product-card
@@ -46,7 +47,7 @@ const addToCart = async (prod: object) => {
           :regular-price="prod.prices.regular_price"
           :id="prod.id"
           :image="prod.images[0].thumbnail"
-          @addtoCart="addToCart(prod)"
+          @addProductToCart="addToCart(prod)"
         />
       </div>
     </section>

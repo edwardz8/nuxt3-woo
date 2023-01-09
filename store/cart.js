@@ -28,10 +28,12 @@ export const useCartStore = defineStore('cartStore', {
         /* EMPTY CART */
         emptyCart() {
             this.cartList = []
-            localStorage.cart = null 
+            localStorage.removeItem('cart')
         }
     },
 
     /* GETTERS */
-    cartItems: (state) => state.cartList 
+    getters: {
+        cartItems: (state) => state.cartList,
+      }
 })
