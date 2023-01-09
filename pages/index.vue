@@ -29,6 +29,7 @@ if (storeProducts.value) {
 
 const addToCart = async (prod: object) => {
   cartStore.addToCart(prod);
+  console.log(prod, 'product')
 };
 </script>
 

@@ -11,7 +11,8 @@ defineProps<{
 }>();
 
 const addToCart = () => {
-  emit("addToCart");
+  // emit("addToCart");
+  console.log('addToCart')
 };
 </script>
 

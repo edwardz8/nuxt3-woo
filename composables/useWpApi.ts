@@ -14,6 +14,9 @@ export default () => {
             withCredentials: false,
         });
         return res;
+        console.log(`${WP_URL}/wp-json/wc/store/v1/${endpoint}`, 'get url')
+        console.log(config, 'config')
+        return {}
     };
 
     // post 
@@ -38,7 +41,7 @@ export default () => {
     ) => {
         let query: string = `products?page=${page}&per_page=${perPage}&_embed=1`;
         if (category) {
-            query += `&categories=${category}`;
+           query += `&categories=${category}`;
         }
         return get<Product[]>(query);
     };
