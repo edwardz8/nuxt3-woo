@@ -12,7 +12,10 @@ export const useProductStore = defineStore('productStore', {
         }
     },
     getters: {
+        /* get all products */
         products: state => state.productsList,
+
+        /* get single product */
         productById: state => (id) => {
             return state.productsList.find(prod => prod.id === id)
         }

@@ -14,7 +14,6 @@ export default () => {
             withCredentials: false,
         });
         return res;
-        // console.log(`${WP_URL}/wp-json/wc/store/v1/${endpoint}`, 'get url')
     };
 
     // post 
