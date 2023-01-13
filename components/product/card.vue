@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-const emit = defineEmits(["addProductToCart"]);
-
 defineProps<{
   title: string;
   excerpt?: string;
@@ -9,6 +7,8 @@ defineProps<{
   salePrice?: string;
   regularPrice?: string;
 }>();
+
+const emit = defineEmits(["addProductToCart"]);
 
 const addProductToCart = () => {
   emit("addProductToCart");

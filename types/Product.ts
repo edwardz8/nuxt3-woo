@@ -8,13 +8,7 @@ export interface Category {
     id: number;
     name: string;
     slug: string;
-    parent: number;
-    description: string;
-    display: string;
-    image: Image;
-    menu_order: number;
-    count: number;
-    _links: Links;
+    link: string;
 }
 
 export interface Collection {
@@ -27,75 +21,76 @@ export interface Dimensions {
     height: string;
 }
 
-export interface MetaDatum {
-    id: number;
-    key: string;
-    value: string;
-}
-
-
 interface Attribute {
     id: number;
     name: string;
+    taxonomy: string;
     position: number;
+    terms: any[];
     visible: boolean;
     variation: boolean;
     options: string[];
 }
 
-
 export interface Self {
-    href: string;
-}
-
-export interface Links {
-    self: Self[];
-    collection: Collection[];
-    up: Up[];
-}
-
-export interface Up {
     href: string;
 }
 
 export interface Image {
     id: number;
-    date_created: Date;
-    date_created_gmt: Date;
-    date_modified: Date;
-    date_modified_gmt: Date;
     src: string;
+    thumbnail: string;
+    srcset: string;
+    sizes: string;
     name: string;
     alt: string;
-    position: number;
+}
+
+export interface Prices {
+    price: string;
+    regular_price: string;
+    sale_price: string,
+    price_range: string;
+    currency_code: string;
+    currency_symbol: string;
+    currency_minor_unit: number;
+    currency_decimal_separator: string;
+    currency_thousand_separator: string;
+    currency_prefix: string;
+    currency_suffix: string;
 }
 
 export interface Product {
     id: number;
     name: string;
+    parent: number;
     slug: string;
+    type: "simple" | "variable" | "grouped";
+    variation: string;
     permalink: string;
+    sku: string;
+    short_description: string;
+    description: string;
     date_created: Date;
+    prices: Prices;
+    price_html: string;
+    average_rating: string;
     date_created_gmt: Date;
     date_modified: Date;
     date_modified_gmt: Date;
-    type: "simple" | "variable" | "grouped";
     status: string;
-    featured: boolean;
     catalog_visibility: string;
-    description: string;
-    short_description: string;
-    sku: string;
-    price: string;
+    featured: boolean;
     regular_price: string;
     sale_price: string;
-    date_on_sale_from: null;
-    date_on_sale_from_gmt: null;
-    date_on_sale_to: null;
-    date_on_sale_to_gmt: null;
-    price_html: string;
-    on_sale: boolean;
-    purchasable: boolean;
+    review_count: number;
+    has_options: boolean;
+    is_purchasable: boolean;
+    is_in_stock: boolean;
+    is_on_backorder: boolean;
+    low_stock_remaining: null;
+    sold_individually: boolean;
+    add_to_cart: any;
     total_sales: number;
     virtual: boolean;
     downloadable: boolean;
@@ -108,11 +103,6 @@ export interface Product {
     tax_class: string;
     manage_stock: boolean;
     stock_quantity: null;
-    in_stock: boolean;
-    backorders: string;
-    backorders_allowed: boolean;
-    backordered: boolean;
-    sold_individually: boolean;
     weight: string;
     dimensions: Dimensions;
     shipping_required: boolean;
@@ -120,8 +110,6 @@ export interface Product {
     shipping_class: string;
     shipping_class_id: number;
     reviews_allowed: boolean;
-    average_rating: string;
-    rating_count: number;
     related_ids: number[];
     upsell_ids: number[];
     cross_sell_ids: number[];
@@ -133,8 +121,5 @@ export interface Product {
     attributes: Attribute[];
     default_attributes: any[];
     variations: number[];
-    grouped_products: any[];
-    menu_order: number;
-    meta_data: MetaDatum[];
-    _links: Links;
+    extensions: any;
 }
